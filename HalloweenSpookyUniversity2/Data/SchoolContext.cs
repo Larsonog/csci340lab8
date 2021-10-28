@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using HalloweenSpookyUniversity2.Models;
 
@@ -5,11 +9,10 @@ namespace HalloweenSpookyUniversity2.Data
 {
     public class SchoolContext : DbContext
     {
-        public SchoolContext(DbContextOptions<SchoolContext> options)
+        public SchoolContext (DbContextOptions<SchoolContext> options)
             : base(options)
         {
         }
-
         public DbSet<Student> Students { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<Course> Courses { get; set; }
@@ -20,5 +23,6 @@ namespace HalloweenSpookyUniversity2.Data
             modelBuilder.Entity<Enrollment>().ToTable("Enrollment");
             modelBuilder.Entity<Student>().ToTable("Student");
         }
+        public DbSet<HalloweenSpookyUniversity2.Models.Student> Student { get; set; }
     }
 }
