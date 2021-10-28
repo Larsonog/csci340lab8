@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using HalloweenSpookyUniversity2.Data;
 
 namespace HalloweenSpookyUniversity2
 {
@@ -24,6 +26,10 @@ namespace HalloweenSpookyUniversity2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddDbContext<SchoolContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("SchoolContext")));
+            services.AddDatabaseDeveloperPageExceptionFilter();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,6 +38,7 @@ namespace HalloweenSpookyUniversity2
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseMigrationsEndPoint();
             }
             else
             {
