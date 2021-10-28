@@ -169,3 +169,4 @@ C:\Users\mango\Desktop\csci340lab8\HalloweenSpookyUniversity2\obj\Debug\net5.0\R
 C:\Users\mango\Desktop\csci340lab8\HalloweenSpookyUniversity2\obj\Debug\net5.0\Razor\Pages\Students\Edit.cshtml.g.cs
 C:\Users\mango\Desktop\csci340lab8\HalloweenSpookyUniversity2\obj\Debug\net5.0\Razor\Pages\Students\Index.cshtml.g.cs
 C:\Users\mango\Desktop\csci340lab8\HalloweenSpookyUniversity2\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\mango\Desktop\csci340lab8\HalloweenSpookyUniversity2\obj\Debug\net5.0\Razor\Pages\About.cshtml.g.cs
