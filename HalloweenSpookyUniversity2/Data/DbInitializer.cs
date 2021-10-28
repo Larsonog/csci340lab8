@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace ContosoUniversity.Data
+namespace HalloweenSpookyUniversity2.Data
 {
     public static class DbInitializer
     {
