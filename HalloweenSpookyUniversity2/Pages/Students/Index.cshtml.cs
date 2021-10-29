@@ -37,6 +37,7 @@ namespace HalloweenSpookyUniversity2.Pages.Students
             CurrentSort = sortOrder;
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+            AgeSort = sortOrder == "Age" ? "age_desc" : "Age";
             if (searchString != null)
             {
                 pageIndex = 1;
