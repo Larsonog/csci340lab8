@@ -21,13 +21,11 @@ namespace HalloweenSpookyUniversity2.Pages.Students
             _context = context;
             Configuration = configuration;
         }
-
         public string NameSort { get; set; }
         public string DateSort { get; set; }
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
         public string AgeSort { get; set; }
-
 
         public PaginatedList<Student> Students { get; set; }
 
@@ -46,6 +44,8 @@ namespace HalloweenSpookyUniversity2.Pages.Students
             {
                 searchString = currentFilter;
             }
+            CurrentFilter = searchString;
+
             IQueryable<Student> studentsIQ = from s in _context.Students
                                              select s;
             if (!String.IsNullOrEmpty(searchString))
@@ -74,8 +74,6 @@ namespace HalloweenSpookyUniversity2.Pages.Students
                 default:
                     studentsIQ = studentsIQ.OrderBy(s => s.LastName);
                     break;
-                
-
             }
 
             var pageSize = Configuration.GetValue("PageSize", 4);
@@ -83,5 +81,4 @@ namespace HalloweenSpookyUniversity2.Pages.Students
                 studentsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
         }
     }
-    
 }
